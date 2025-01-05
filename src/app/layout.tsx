@@ -3,6 +3,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { cookies } from "next/headers"
 import "./globals.css";
+import Navbar from "@/components/nav-bar";
 
 export default async function Layout({
   children,
@@ -20,11 +21,15 @@ export default async function Layout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           <SidebarProvider defaultOpen={defaultOpen}>
+          
             <AppSidebar />
+           
             <main>
               {children}
             </main>
+            
           </SidebarProvider>
         </ThemeProvider>
       </body>

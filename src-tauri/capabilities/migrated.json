@@ -68,6 +68,7 @@
     "core:window:allow-set-cursor-position",
     "core:window:allow-set-ignore-cursor-events",
     "core:window:allow-start-dragging",
+    "core:window:allow-toggle-maximize",
     "core:webview:allow-print",
     {
       "identifier": "shell:allow-execute",
