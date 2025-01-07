@@ -26,7 +26,7 @@ export default async function Layout({
           
             <AppSidebar />
            
-            <main>
+            <main className="w-full">
               {children}
             </main>
             

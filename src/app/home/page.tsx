@@ -1,9 +1,7 @@
 import React from "react";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import {
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
-export default function page() {
+
+const Home = () => {
   const words = [
     {
       text: "Build",
@@ -23,7 +21,7 @@ export default function page() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-[40rem]  ">
+    <div className="flex flex-col items-center justify-center h-[40rem]">
       <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
         The road to freedom starts from here
       </p>
@@ -32,3 +30,4 @@ export default function page() {
     </div>
   );
   }
+  export default Home;
