@@ -1,40 +1,37 @@
 "use client"
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ThemeSwitcher } from "./theme-switcher";
 import { invoke } from "@tauri-apps/api/core";
 import { getCurrentWebviewWindow } from "@tauri-apps/api/webviewWindow";
-import { Minimize, AppWindow, SidebarClose } from "lucide-react";
+import { AppWindowMac,  Minimize2,  SquareX } from "lucide-react";
 import * as React from "react";
 const Navbar = () => {
-  let appWindow;
+  const appWindow = React.useRef<ReturnType<typeof getCurrentWebviewWindow> | null>(null);
   React.useEffect(() => {
-    appWindow = getCurrentWebviewWindow();
+    appWindow.current = getCurrentWebviewWindow();
   }, []);
   return (
-    <Card className="container py-3 px-4 border-0 flex items-center justify-between gap-6 rounded-2xl mt-5">
-      <ul className="hidden md:flex items-center gap-10">
-        <ThemeSwitcher />
-      </ul>
+    <Card className="py-1 px-2 border-0 flex justify-end gap-2 rounded-2xl mt-1">
+      
 
       <div className="flex items-center">
         <Button
           variant="outline"
           onClick={() => {
-            appWindow.minimize();
+            appWindow.current?.minimize();
           }}
           size="icon"
         >
-          <Minimize />
+          <Minimize2 />
         </Button>
         <Button
           variant="outline"
           onClick={() => {
-            appWindow.toggleMaximize();
+            appWindow.current?.toggleMaximize();
           }}
           size="icon"
         >
-          <AppWindow />
+          <AppWindowMac />
         </Button>
         <Button
           variant="outline"
@@ -43,7 +40,7 @@ const Navbar = () => {
           }}
           size="icon"
         >
-          <SidebarClose />
+          <SquareX />
         </Button>
       </div>
     </Card>
