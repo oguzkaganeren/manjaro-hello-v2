@@ -107,7 +107,7 @@ fn main() {
         // After it's done, close the splashscreen and display the main window
         splashscreen_window.close().unwrap();
         main_window.show().unwrap();
-        main_window.open_devtools();
+        //main_window.open_devtools();
       });
       let quit_i = MenuItem::with_id(app, "quit", "Quit Manjaro Starter", true, None::<&str>)?;
       let hide_i = MenuItem::with_id(app, "hide", "Hide", true, None::<&str>)?;

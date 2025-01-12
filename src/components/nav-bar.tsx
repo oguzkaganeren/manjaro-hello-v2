@@ -11,8 +11,8 @@ const Navbar = () => {
     appWindow.current = getCurrentWebviewWindow();
   }, []);
   return (
-    <Card className="py-1 px-2 border-0 flex justify-end gap-2 rounded-2xl mt-1">
-      
+    <div data-tauri-drag-region="" className="py-1 px-2 border-0 flex justify-end gap-2 rounded-2xl mt-1 titlebar">
+    
 
       <div className="flex items-center">
         <Button
@@ -43,7 +43,7 @@ const Navbar = () => {
           <SquareX />
         </Button>
       </div>
-    </Card>
+    </div>
   );
 };
 
