@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import urls from "@/resources/socialMediaUrls.json";
 import SocialMediaIcons from "@/components/SocialMediaIcons";
 import { ChevronRightIcon } from "lucide-react";
-
+import { useRouter } from "next/navigation";
 const Home = () => {
+  const router = useRouter();
   return (
     <>
       {/* Hero */}
@@ -28,7 +29,9 @@ const Home = () => {
           </div>
           {/* Buttons */}
           <div className="mt-8 gap-3 flex justify-center">
-            <Button size={"lg"}>Get started</Button>
+            <Button size={"lg"} onClick={() => router.push("/dashboard")}>
+              Get started
+            </Button>
             <Button size={"lg"} variant={"outline"}>
               Learn more
             </Button>
