@@ -1,7 +1,4 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { cookies } from "next/headers"
 import "./globals.css";
 import Navbar from "@/components/nav-bar";
 
@@ -10,8 +7,6 @@ export default async function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-   const cookieStore = await cookies()
-  const defaultOpen = cookieStore.get("sidebar:state")?.value === "true"
   return (
     <html lang="en">
       <body>
@@ -22,15 +17,8 @@ export default async function Layout({
           disableTransitionOnChange
         >
           <Navbar />
-          <SidebarProvider defaultOpen={defaultOpen}>
-          
-            <AppSidebar />
-           
-            <main className="w-full">
-              {children}
-            </main>
-            
-          </SidebarProvider>
+
+          <main className="w-full">{children}</main>
         </ThemeProvider>
       </body>
     </html>

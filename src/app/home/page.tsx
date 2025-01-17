@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <div className="flex justify-center min-h-screen">
+      <div className="flex justify-center">
         <div className="container py-24 lg:py-32">
           {/* Announcement Banner */}
           <div className="flex justify-center">
